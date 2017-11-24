@@ -1,11 +1,9 @@
-package com.projecteuler.math.multiplication;
+package com.projecteuler.math.fibonacci;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import com.projecteuler.math.fibonacci.FibonacciVariation;
 
 public class FibonacciVariationTest {
 	private FibonacciVariation fibVariation;
@@ -23,6 +21,7 @@ public class FibonacciVariationTest {
 		assertEquals(44l, fibVariation.sumOfEvenNumberInFibonacciRange(100));
 		assertEquals(798l, fibVariation.sumOfEvenNumberInFibonacciRange(1000));
 		assertEquals(3382l, fibVariation.sumOfEvenNumberInFibonacciRange(10000));
+		assertEquals(4613732l, fibVariation.sumOfEvenNumberInFibonacciRange(4000000));
 	}
 
 }
