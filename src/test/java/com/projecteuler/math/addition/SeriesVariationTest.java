@@ -25,5 +25,6 @@ public class SeriesVariationTest {
 		assertEquals(30, seriesVariation.calculateSumOfAllEvenInRange(10));
 		assertEquals(2550, seriesVariation.calculateSumOfAllEvenInRange(100));
 		assertEquals(10100, seriesVariation.calculateSumOfAllEvenInRange(200));
+		assertEquals(10100, seriesVariation.calculateSumOfAllEvenInRange(201));
 	}
 }
