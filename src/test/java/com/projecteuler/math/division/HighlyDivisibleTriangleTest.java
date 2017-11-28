@@ -12,6 +12,7 @@ public class HighlyDivisibleTriangleTest {
 		assertEquals(25200l, HighlyDivisibleTriangle.FindNumberWhoHasMoreThanGivenDivisor(50));
 		assertEquals(73920l, HighlyDivisibleTriangle.FindNumberWhoHasMoreThanGivenDivisor(100));
 		assertEquals(6l, HighlyDivisibleTriangle.FindNumberWhoHasMoreThanGivenDivisor(2));
+		assertEquals(76576500l, HighlyDivisibleTriangle.FindNumberWhoHasMoreThanGivenDivisor(500));
 	}
 
 }

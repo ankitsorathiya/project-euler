@@ -32,11 +32,16 @@ public class HighlyDivisibleTriangle {
 
 	private static int findDivisorCount(long triangleNumber) {
 		int divisorCount = 0;
-		for (long divisor = 1; divisor <= triangleNumber; divisor++) {
+		for (int divisor = 1; divisor * divisor <= triangleNumber; divisor++) {
 			if (triangleNumber % divisor == 0) {
-				divisorCount++;
+				if (triangleNumber / divisor == divisor) {
+					divisorCount++;
+				} else {
+					divisorCount += 2;
+				}
 			}
 		}
+
 		return divisorCount;
 	}
 }
