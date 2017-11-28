@@ -1,5 +1,8 @@
 package com.projecteuler.math.sequence;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 
  * The following iterative sequence is defined for the set of positive integers:
@@ -22,28 +25,35 @@ package com.projecteuler.math.sequence;
 public class LongestCollatzChain {
 	public static int findStartingNumberWhoProducesLongestChainUnder(int limit) {
 		int collartzNumber = Integer.MIN_VALUE;
-		int sequenceCount = Integer.MIN_VALUE;
-		int currentNumber = 1;
-		while (currentNumber < limit) {
-			int sequenceStart = currentNumber;
-			int currentSequence = 1;
-			while (true) {
-				if (sequenceStart % 2 == 0) {
-					sequenceStart /= 2;
-				} else {
-					sequenceStart = (sequenceStart * 3) + 1;
-				}
-				currentSequence++;
-				if (sequenceStart == 1) {
-					break;
-				}
+		int maxSequenceCount = Integer.MIN_VALUE;
+		int sequenceStart = 1;
+		Map<Integer, Integer> sequenceMap = new HashMap<>();
+		while (sequenceStart < limit) {
+			int currentSequenceCount = findSequenceCount(sequenceStart, false, sequenceMap);
+			if (currentSequenceCount > maxSequenceCount) {
+				maxSequenceCount = currentSequenceCount;
+				collartzNumber = sequenceStart;
 			}
-			if (currentSequence > sequenceCount) {
-				sequenceCount = currentSequence;
-				collartzNumber = currentNumber;
-			}
-			currentNumber++;
+			sequenceStart++;
 		}
 		return collartzNumber;
+	}
+
+	private static int findSequenceCount(int sequenceStart, boolean shouldStopAtOne,
+			Map<Integer, Integer> sequenceMap) {
+		if (shouldStopAtOne && sequenceStart == 1) {
+			return 1;
+		}
+		if (sequenceMap.containsKey(sequenceStart)) {
+			return sequenceMap.get(sequenceStart);
+		}
+		int count = 1;
+		if (sequenceStart % 2 == 0) {
+			count += findSequenceCount(sequenceStart / 2, true, sequenceMap);
+		} else {
+			count += findSequenceCount((sequenceStart * 3) + 1, true, sequenceMap);
+		}
+		sequenceMap.put(sequenceStart, count);
+		return count;
 	}
 }
