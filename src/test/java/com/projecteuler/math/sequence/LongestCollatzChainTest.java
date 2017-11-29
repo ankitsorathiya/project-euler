@@ -8,5 +8,6 @@ public class LongestCollatzChainTest {
 	@Test
 	public void testLongetstCollatzChain() {
 		assertEquals(9, LongestCollatzChain.findStartingNumberWhoProducesLongestChainUnder(13));
+		assertEquals(19, LongestCollatzChain.findStartingNumberWhoProducesLongestChainUnder(20));
 	}
 }

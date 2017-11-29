@@ -30,7 +30,7 @@ public class LongestCollatzChain {
 		Map<Integer, Integer> sequenceMap = new HashMap<>();
 		while (sequenceStart < limit) {
 			int currentSequenceCount = findSequenceCount(sequenceStart, false, sequenceMap);
-			if (currentSequenceCount > maxSequenceCount) {
+			if (currentSequenceCount >= maxSequenceCount) {
 				maxSequenceCount = currentSequenceCount;
 				collartzNumber = sequenceStart;
 			}
