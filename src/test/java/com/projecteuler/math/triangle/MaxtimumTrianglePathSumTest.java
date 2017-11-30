@@ -6,6 +6,13 @@ import org.junit.Test;
 
 public class MaxtimumTrianglePathSumTest {
 	@Test
+	public void testMaxTrianglePathWithInvalidaData()
+	{
+		assertEquals(0, MaxtimumTrianglePathSum.findMaximumTriangleSumPath(new String[] {}));
+		assertEquals(0, MaxtimumTrianglePathSum.findMaximumTriangleSumPath(null));
+	}
+
+	@Test
 	public void testMaxTrianglePathWithSmallData() {
 		String[] triangle = new String[] { "3", "7 4", "2 4 6", "8 5 9 3" };
 		int maxPathSum = MaxtimumTrianglePathSum.findMaximumTriangleSumPath(triangle);

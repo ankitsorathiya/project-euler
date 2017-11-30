@@ -22,7 +22,7 @@ public class PowerDigitSumTest {
 
 	@Parameters
 	public static Collection<Object[]> getData() {
-		return Arrays.asList(new Object[][] { { 15l, 26l }, { 1000l, 88l } });
+		return Arrays.asList(new Object[][] { { 15l, 26l }, { 1000l, 1366l } });
 	}
 
 	@Test

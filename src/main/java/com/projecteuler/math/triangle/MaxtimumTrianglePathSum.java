@@ -65,7 +65,7 @@ public class MaxtimumTrianglePathSum {
 }
 
 class TriangleNode {
-	private int value;
+	private final int value;
 	private TriangleNode leftChild;
 	private TriangleNode rightChild;
 
@@ -85,21 +85,12 @@ class TriangleNode {
 		return rightChild;
 	}
 
-	public void setValue(int value) {
-		this.value = value;
-	}
-
 	public void setLeftChild(TriangleNode leftChild) {
 		this.leftChild = leftChild;
 	}
 
 	public void setRightChild(TriangleNode rightChild) {
 		this.rightChild = rightChild;
-	}
-
-	@Override
-	public String toString() {
-		return String.valueOf(value);
 	}
 
 }
